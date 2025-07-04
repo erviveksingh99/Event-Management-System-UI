@@ -1,0 +1,49 @@
+.contactStatus {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0;
+  border-bottom: 2px solid var(--border-color);
+  margin-bottom: 15px;
+}
+
+.contactStatus:last-child {
+  border-bottom: none;
+}
+
+.contactActivity {
+  display: flex;
+  align-items: center;
+  column-gap: 14px;
+}
+
+.contactActivity img {
+  max-width: 45px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.contactActivity p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  padding-right: 10px;
+}
+
+.contactActivity p span {
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-left: 2px;
+  cursor: pointer;
+}
+
+.contactActivity p span:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--accent-color);
+  text-decoration-thickness: 1.5px;
+}
+
+.contactStatus small {
+  font-size: 0.8rem;
+  opacity: 0.5;
+  margin-left: auto;
+}

@@ -1,0 +1,33 @@
+.card {
+  background-color: var(--card-bg-color);
+  border-radius: 8px;
+  border: 2px solid rgba(169, 150, 253, 0.5);
+  box-shadow: 0px 4px 5px var(--shadow-color);
+  padding: 20px;
+}
+
+.reviewCard h2 {
+  margin-bottom: 8px;
+}
+
+.ratings i {
+  color: var(--star-color);
+  font-size: 1.15rem;
+}
+
+.reviewCard p {
+  margin-top: 10px;
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @supports (-webkit-line-clamp: 3) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: initial;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+}

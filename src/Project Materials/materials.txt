@@ -1,0 +1,85 @@
+Data Base: 
+
+CREATE TABLE users (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  username VARCHAR(100),
+  email VARCHAR(100),
+  password VARCHAR(255),
+  role VARCHAR(20)
+);
+
+CREATE TABLE events (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR(100),
+  description TEXT,
+  date DATE,
+  location VARCHAR(100),
+  created_by BIGINT
+);
+
+CREATE TABLE registrations (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  user_id BIGINT,
+  event_id BIGINT,
+  registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+Bonus Features (if time mil gaya)
+Export registrations as CSV
+
+Upload event banner using Multer or Spring Multipart
+
+PDF tickets on registration
+
+
+src/
+├── components/
+│   ├── EventList.jsx
+│   ├── RegisterForm.jsx
+│   └── AdminDashboard.jsx
+├── pages/
+│   ├── Login.jsx
+│   ├── Register.jsx
+│   ├── MyEvents.jsx
+├── services/
+│   └── api.js  (Axios config with token)
+
+
+com.example.eventsystem
+├── controller/
+│   ├── AuthController.java
+│   ├── EventController.java
+├── model/
+│   ├── User.java
+│   ├── Event.java
+│   └── Registration.java
+├── service/
+├── repository/
+├── config/
+
+
+🧩 Modules Overview
+👤 User Side (React)
+View upcoming events
+
+Register/Login
+
+Register for any event
+
+View “My Events”
+
+👨‍💼 Admin Side (React)
+Create / Edit / Delete events
+
+View list of attendees per event
+
+Dashboard: Total events, total users, registrations chart
+
+
+🔐 Authentication & Authorization
+Use JWT for secure login/signup
+
+Restrict /admin/** APIs for ADMIN role
+
+Use Spring Security filters to validate token
