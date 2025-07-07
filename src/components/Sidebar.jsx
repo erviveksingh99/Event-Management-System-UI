@@ -1,58 +1,52 @@
-import React from "react";
-import styles from "./Sidebar.module.css";
+import React from 'react';
+import { Form, Button } from 'react-bootstrap';
 
-
-const Sidebar = ({ activeNav, setActiveNav }) => {
-  const navItems = [
-    { label: "Profile", icon: "fa fa-user" },
-    { label: "Discover", icon: "fa fa-map" },
-    { label: "Trending", icon: "fa fa-arrow-trend-up" },
-    { label: "Analytics", icon: "fa-solid fa-chart-simple" },
-    { label: "Favorites", icon: "fa fa-heart" },
-    { label: "Reviews", icon: "fa-solid fa-pen-to-square" },
-  ];
+const Sidebar = ({ darkMode }) => {
+  const bg = darkMode ? 'bg-dark text-light' : 'bg-white text-dark';
 
   return (
-    <nav className={styles.mainMenu}>
-      <div>
-        <div className={styles.userInfo}>
-          <img
-            src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/e5a707f4-d5ac-4f30-afd8-4961ae353dbc"
-            alt="user"
-          />
-          <p>Mia Taylor</p>
-        </div>
-        <ul>
-          {navItems.map((item) => (
-            <li
-              key={item.label}
-              className={`${styles.navItem} ${
-                activeNav === item.label ? styles.active : ""
-              }`}
-            >
-              <a href="#" onClick={() => setActiveNav(item.label)}>
-                <i className={`${item.icon} ${styles.navIcon}`}></i>
-                <span className={styles.navText}>{item.label}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <ul>
-        <li className={styles.navItem}>
-          <a href="#">
-            <i className={`fa fa-gear ${styles.navIcon}`}></i>
-            <span className={styles.navText}>Settings</span>
-          </a>
-        </li>
-        <li className={styles.navItem}>
-          <a href="#">
-            <i className={`fa fa-right-from-bracket ${styles.navIcon}`}></i>
-            <span className={styles.navText}>Logout</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <div className={`p-3 shadow-sm ${bg}`}>
+      <h5 className="mb-4">Filter Events</h5>
+      <Form>
+        <Form.Group className="mb-3">
+          <Form.Label>Location</Form.Label>
+          <Form.Control type="text" placeholder="e.g. India" />
+        </Form.Group>
+
+        <Form.Group className="mb-3">
+          <Form.Label>Name</Form.Label>
+          <Form.Control type="text" placeholder="Event name" />
+        </Form.Group>
+
+        <Form.Group className="mb-3">
+          <Form.Label>Date</Form.Label>
+          <div className="d-flex gap-2">
+            <Form.Control type="date" />
+            {/* <Form.Control type="date" /> */}
+          </div>
+        </Form.Group>
+
+        <Form.Group className="mb-3">
+          <Form.Label>Event Type</Form.Label>
+          <Form.Select>
+            <option>All</option>
+            <option>Online</option>
+            <option>Offline</option>
+          </Form.Select>
+        </Form.Group>
+
+        <Form.Group className="mb-4">
+          <Form.Label>Paid/Free</Form.Label>
+          <Form.Select>
+            <option>All</option>
+            <option>Paid</option>
+            <option>Free</option>
+          </Form.Select>
+        </Form.Group>
+
+        <Button variant="warning" className="w-100">Apply Filters</Button>
+      </Form>
+    </div>
   );
 };
 

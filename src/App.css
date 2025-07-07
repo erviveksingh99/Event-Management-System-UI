@@ -1,3 +1,49 @@
-/* src/index.css */
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;…");
-/* // paste entire original CSS from CodePen here (including :root, .darkmode, layout, media queries, etc.) */
+/* Light Theme */
+body {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+/* Dark Theme - Custom Purple */
+.dark-mode {
+  background-color: #1e1e2f;
+  color: #e0e0ff;
+}
+
+.dark-mode .bg-white,
+.dark-mode .card,
+.dark-mode .nav-tabs,
+.dark-mode .form-control,
+.dark-mode .form-select {
+  background-color: #29293d !important;
+  color: #e0e0ff !important;
+  border-color: #444 !important;
+}
+
+.dark-mode .btn-outline-dark,
+.dark-mode .btn-outline-light {
+  /* border-color: #9b59b6;
+  color: #9b59b6; */
+}
+
+.dark-mode .btn-outline-dark:hover,
+.dark-mode .btn-outline-light:hover {
+  /* background-color: #9b59b6;
+  color: #fff; */
+
+   background-color: #1e1e2f;
+  color: #fff;
+}
+
+.dark-mode .nav-tabs .nav-link.active {
+  background-color: #9b59b6 !important;
+  color: #fff !important;
+}
+
+.dark-mode .progress {
+  background-color: #444;
+}
+
+.dark-mode .progress-bar {
+  background-color: #9b59b6;
+}

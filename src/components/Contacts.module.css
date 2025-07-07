@@ -1,9 +1,0 @@
-.contacts h1 {
-  margin: 20px 0;
-}
-
-.contactsContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
